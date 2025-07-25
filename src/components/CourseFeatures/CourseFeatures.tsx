@@ -1,16 +1,17 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import { Card, CardContent } from './ui/card';
+import { Card, CardContent } from '../ui/card';
 import Image from 'next/image';
 import { Data } from '@/types/product';
+import GroupJoinEngagement from './GroupJoinEngagement';
 
-interface CourseBannerProps {
+interface CourseFeaturesProps {
   data: Data;
 }
 
 
 
-const CourseFeatures = ({ data }: CourseBannerProps) => {
+const CourseFeatures = ({ data }: CourseFeaturesProps) => {
   const featuresSection = data?.sections?.find(
     (section) => section.type === 'features'
   );
@@ -25,8 +26,8 @@ const CourseFeatures = ({ data }: CourseBannerProps) => {
           <Card key={feature.id} className="bg-[#111827] border-none shadow-none">
             <CardContent className="p-4">
               <div className="flex items-start gap-3 mb-2">
-               
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center ">
+
+                <div className="w-10 h-10 rounded-full flex items-center justify-center ">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
@@ -34,7 +35,7 @@ const CourseFeatures = ({ data }: CourseBannerProps) => {
                     height={30}
                     className="rounded-full"
                   />
-              
+
                 </div>
                 <div className="flex-1">
                   <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
@@ -45,6 +46,7 @@ const CourseFeatures = ({ data }: CourseBannerProps) => {
           </Card>
         ))}
       </div>
+      <GroupJoinEngagement data={data}/>
     </div>
   )
 }
