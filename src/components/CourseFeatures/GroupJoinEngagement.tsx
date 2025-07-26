@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 import { Card, CardContent } from '../ui/card';
 import Image from 'next/image';
@@ -17,7 +18,7 @@ const GroupJoinEngagement = ({ data }: CourseFeaturesProps) => {
 
     return (
         <div className="mt-6 space-y-6">
-            {items.map((item) => (
+            {items.map((item:any) => (
                 <div
                     key={item.id}
                     className="rounded-lg overflow-hidden"

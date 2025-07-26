@@ -13,6 +13,7 @@ import {
   Award,
   Facebook,
   MessageCircle,
+  Navigation,
 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -26,6 +27,12 @@ import { fetchProductData } from "@/lib/api";
 import { GetServerSideProps } from "next";
 import CourseInstructor from "@/components/CourseInstructor/CourseInstructor"
 import LearnCourse from "@/components/whatLearn/LearnCourse"
+import AboutSection from "@/components/about/AboutSection"
+import Feature_explanations from "@/components/feature_explanations/Feature_Explanations"
+import TestimonialsSection from "@/components/testimonials/TestimonialsSection"
+import CourseDetails from "@/components/course_details/CourseDetails"
+import FaqSection from "@/components/faq/FaqSection"
+import NavigationLink from "@/components/Navigation"
 
 interface ProductPageProps {
   data: any;
@@ -36,27 +43,30 @@ export default function CoursePage({ data }: ProductPageProps) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-
       {/* Banner */}
       <CourseBanner data={courseData} />
-
-
       <div className="max-w-6xl mx-auto px-6 py-8">
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             {/* Navigation Tabs */}
-            <div className="flex gap-6 border-b">
-              <button className="pb-2 border-b-2 border-blue-500 text-blue-600 font-medium">Course Instruction</button>
-              <button className="pb-2 text-gray-600">How the course is laid out</button>
-              <button className="pb-2 text-gray-600">What you will learn by doing the course</button>
-            </div>
+           <NavigationLink/>
             {/* Course Instructor */}
             <CourseInstructor data={courseData} />
             {/* How the course is laid out */}
             <CourseFeatures data={courseData} />
             {/* What you will learn */}
-            <LearnCourse data={courseData}/>
+            <LearnCourse data={courseData} />
+            {/* about section  */}
+            <AboutSection data={courseData} />
+            {/* feature_explanations  */}
+            <Feature_explanations data={courseData} />
+            {/* testimonials  */}
+            <TestimonialsSection data={courseData} />
+            {/* <TestimonialsSection/> */}
+            <CourseDetails />
+            {/* faq section   */}
+            <FaqSection data={courseData} />
           </div>
 
           {/* Sidebar */}

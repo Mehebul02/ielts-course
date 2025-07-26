@@ -1,5 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Data } from '@/types/product';
 import React from 'react';
+import { IoCheckmarkSharp } from 'react-icons/io5';
+import { MdCheck } from 'react-icons/md';
 
 interface LearnCourseProps {
   data: Data;
@@ -12,42 +15,19 @@ const LearnCourse = ({ data }: LearnCourseProps) => {
 
   const learn = learnCourseSection?.values || [];
 
-  // Split data into two columns
-  const mid = Math.ceil(learn.length / 2);
-  const firstColumn = learn.slice(0, mid);
-  const secondColumn = learn.slice(mid);
-
   return (
     <div>
       <h2 className="text-xl font-bold mb-4 text-black">
         {learnCourseSection?.name || 'কোর্সটি করে যা শিখবেন'}
       </h2>
-      <div className="grid md:grid-cols-2 gap-6 border p-6 rounded-lg bg-white shadow-md">
-        {/* First Column */}
-        <div className="space-y-4">
-          {firstColumn.map((item) => (
-            <div key={item.id} className="flex items-start gap-3">
-              <div
-                className="w-2 h-2 rounded-full mt-2"
-                style={{ backgroundColor: item.color || '#22c55e' }} // default green
-              ></div>
-              <p className="text-sm text-gray-700">{item.text}</p>
-            </div>
-          ))}
-        </div>
 
-        {/* Second Column */}
-        <div className="space-y-4">
-          {secondColumn.map((item) => (
-            <div key={item.id} className="flex items-start gap-3">
-              <div
-                className="w-2 h-2 rounded-full mt-2"
-                style={{ backgroundColor: item.color || '#22c55e' }}
-              ></div>
-              <p className="text-sm text-gray-700">{item.text}</p>
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-4 border p-6 rounded-lg bg-white shadow-md">
+        {learn.map((item: any) => (
+          <div key={item.id} className="grid grid-cols-[20px_1fr] gap-2">
+           <MdCheck className="text-[#548af7] mt-1 text-[18px] " />
+            <p className="text-sm text-gray-700">{item.text}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

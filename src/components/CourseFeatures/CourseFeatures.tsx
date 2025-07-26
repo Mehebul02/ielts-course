@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from 'react';
-import { Card, CardContent } from '../ui/card';
 import Image from 'next/image';
 import { Data } from '@/types/product';
 import GroupJoinEngagement from './GroupJoinEngagement';
@@ -8,8 +6,6 @@ import GroupJoinEngagement from './GroupJoinEngagement';
 interface CourseFeaturesProps {
   data: Data;
 }
-
-
 
 const CourseFeatures = ({ data }: CourseFeaturesProps) => {
   const featuresSection = data?.sections?.find(
@@ -21,10 +17,10 @@ const CourseFeatures = ({ data }: CourseFeaturesProps) => {
   return (
     <div className="  rounded-lg">
       <h2 className="text-xl font-bold mb-6 ">{featuresSection?.name}</h2>
-      <div className="grid md:grid-cols-2 gap-2 bg-[#111827] rounded-2xl">
+      <div className="grid md:grid-cols-2 gap-4  bg-[#111827] rounded-2xl p-4">
         {features.map((feature: any) => (
-          <Card key={feature.id} className="bg-[#111827] border-none shadow-none">
-            <CardContent className="p-4">
+          <div key={feature.id} className="bg-[#111827] border-none shadow-none">
+            <div className="p-4">
               <div className="flex items-start gap-3 mb-2">
 
                 <div className="w-10 h-10 rounded-full flex items-center justify-center ">
@@ -42,8 +38,8 @@ const CourseFeatures = ({ data }: CourseFeaturesProps) => {
                   <p className="text-sm text-gray-300 leading-relaxed">{feature.subtitle}</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
+            </div>
+          </div>
         ))}
       </div>
       <GroupJoinEngagement data={data}/>
@@ -55,7 +51,7 @@ export default CourseFeatures
 
 
 
-// const CourseFeatures = ({ data }: CourseBannerProps) => {
+
 //   const featuresSection = data?.sections?.find(
 //     (section) => section.type === 'features'
 //   );
