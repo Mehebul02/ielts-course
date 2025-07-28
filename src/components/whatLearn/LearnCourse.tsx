@@ -16,7 +16,7 @@ const LearnCourse = ({ data }: LearnCourseProps) => {
   const learn = learnCourseSection?.values || [];
 
   return (
-    <div>
+    <div className='mt-6 lg:mt-4'>
       <h2 className="text-xl font-bold mb-4 text-black">
         {learnCourseSection?.name || 'কোর্সটি করে যা শিখবেন'}
       </h2>

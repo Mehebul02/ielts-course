@@ -15,7 +15,7 @@ export default function Feature_explanations({ data }: FeatureExplanationsProps)
     const courseFeatures = featureExplanations?.values || []
 
     return (
-        <div className="max-w-4xl mx-auto bg-white">
+        <div className="max-w-4xl mx-auto bg-white mt-6 lg:mt-4">
             {/* Header */}
             <h1 className="text-2xl font-bold text-gray-800 mb-8">
                 {featureExplanations?.name}

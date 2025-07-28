@@ -11,7 +11,7 @@ interface AboutSectionProps {
 }
 
 export default function AboutSection({ data }: AboutSectionProps) {
-  const [openItems, setOpenItems] = useState<number[]>([0]);
+  const [openItems, setOpenItems] = useState<number[]>([]);
 
   const aboutSection = data?.sections?.find(
     (section: any) => section.type === 'about'
@@ -26,7 +26,7 @@ export default function AboutSection({ data }: AboutSectionProps) {
   };
 
   return (
-    <div className="">
+    <div className="mt-6 lg:mt-4">
       <h2 className="text-2xl font-bold mb-8 text-gray-800">
         {aboutSection?.name}
       </h2>
