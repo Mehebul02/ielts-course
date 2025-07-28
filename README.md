@@ -18,5 +18,3 @@ This project is a responsive and fully functional IELTS Course website built usi
 
 ---
 
-## 📁 Folder Structure
-
