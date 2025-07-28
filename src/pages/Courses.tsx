@@ -33,6 +33,7 @@ import TestimonialsSection from "@/components/testimonials/TestimonialsSection"
 import CourseDetails from "@/components/course_details/CourseDetails"
 import FaqSection from "@/components/faq/FaqSection"
 import NavigationLink from "@/components/Navigation"
+import VideoSection from "@/components/video/VideoSection"
 
 interface ProductPageProps {
   data: any;
@@ -42,15 +43,15 @@ export default function CoursePage({ data }: ProductPageProps) {
   const courseData = data?.data;
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 w-full ">
       {/* Banner */}
       <CourseBanner data={courseData} />
-      <div className="max-w-6xl mx-auto px-6 py-8">
-        <div className="grid lg:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className="flex flex-col-reverse md:flex-row gap-8">
           {/* Main Content */}
-          <div className="lg:col-span-2 space-y-8">
+          <div >
             {/* Navigation Tabs */}
-           <NavigationLink/>
+            <NavigationLink />
             {/* Course Instructor */}
             <CourseInstructor data={courseData} />
             {/* How the course is laid out */}
@@ -68,94 +69,10 @@ export default function CoursePage({ data }: ProductPageProps) {
             {/* faq section   */}
             <FaqSection data={courseData} />
           </div>
-
-          {/* Sidebar */}
-          <div className="space-y-6">
-            {/* Video Preview */}
-            {/* <Card>
-              <CardContent className="p-0">
-                <div className="relative aspect-video bg-gray-200 rounded-t-lg">
-                  <Image
-                    src="/placeholder.svg?height=200&width=300&text=Course+Preview"
-                    alt="Course preview"
-                    fill
-                    className="object-cover rounded-t-lg"
-                  />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Button size="lg" className="rounded-full w-16 h-16">
-                      <Play className="w-6 h-6" />
-                    </Button>
-                  </div>
-                </div>
-              </CardContent>
-            </Card> */}
-
-            {/* Pricing */}
-            <Card>
-              {/* <CardContent className="p-6">
-                <div className="text-center mb-4">
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <span className="text-2xl font-bold">৳৩৮৫০</span>
-                    <span className="text-lg text-gray-500 line-through">৳৫০০০</span>
-                    <Badge variant="destructive">২৩% ছাড়</Badge>
-                  </div>
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3">
-                    Enroll
-                  </Button>
-                </div>
-              </CardContent> */}
-            </Card>
-
-            {/* Course Features */}
-            <Card>
-              {/* <CardContent className="p-6">
-                <h3 className="font-bold mb-4">এই কোর্সে যা থাকছে</h3>
-                <div className="space-y-3">
-                  <div className="flex items-center gap-3">
-                    <Users className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">Total Enrolled 23566</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Clock className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">Time Period 90 hours</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Video className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">54 Videos</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <BookOpen className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">10 Reading & 10 Listening Mock tests</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <FileText className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">35 Lecture Sheets</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Headphones className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">25 Video Lectures</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Award className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">1 Free Hardcopy Book Delivered</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Facebook className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">Facebook Support Group</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <MessageCircle className="w-4 h-4 text-gray-600" />
-                    <span className="text-sm">Course Validity Lifetime</span>
-                  </div>
-                </div>
-                <div className="mt-4 pt-4 border-t">
-                  <p className="text-xs text-gray-600">কোর্স সম্পর্কে বিস্তারিত জানতে</p>
-                  <Button variant="link" className="p-0 h-auto text-green-600">
-                    এখানে ক্লিক করুন
-                  </Button>
-                </div>
-              </CardContent> */}
-            </Card>
+          <div className="space-y-6 top-0   lg:-mt-32">
+            <div className="sticky top-0">
+              <VideoSection data={courseData} />
+            </div>
           </div>
         </div>
       </div>

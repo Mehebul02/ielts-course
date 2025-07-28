@@ -4,7 +4,7 @@ interface Props {
 
 export default function ProductDescription({ html }: Props) {
   return (
-    <div className="prose prose-sm mb-6 w-[700px] "
+    <div className="prose prose-sm mb-6 lg:w-[700px] "
       dangerouslySetInnerHTML={{ __html: html }}
     />
   );

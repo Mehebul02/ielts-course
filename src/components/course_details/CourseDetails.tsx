@@ -2,7 +2,7 @@ import { Check } from "lucide-react"
 
 export default function CourseDetails() {
   return (
-    <div className="max-w-4xl mx-auto  space-y-8">
+    <div className=" mx-auto  space-y-8">
       {/* Course Details Section */}
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold text-gray-900">Course details</h2>
