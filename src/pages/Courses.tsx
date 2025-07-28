@@ -1,29 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import Image from "next/image"
-import {
-  Star,
-  Play,
-  Download,
-  Users,
-  Clock,
-  BookOpen,
-  Video,
-  FileText,
-  Headphones,
-  Award,
-  Facebook,
-  MessageCircle,
-  Navigation,
-} from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-
 import CourseBanner from "@/components/banner/CourseBanner";
 import CourseFeatures from "@/components/CourseFeatures/CourseFeatures";
-
 import { fetchProductData } from "@/lib/api";
-
 import { GetServerSideProps } from "next";
 import CourseInstructor from "@/components/CourseInstructor/CourseInstructor"
 import LearnCourse from "@/components/whatLearn/LearnCourse"
@@ -32,7 +10,7 @@ import Feature_explanations from "@/components/feature_explanations/Feature_Expl
 import TestimonialsSection from "@/components/testimonials/TestimonialsSection"
 import CourseDetails from "@/components/course_details/CourseDetails"
 import FaqSection from "@/components/faq/FaqSection"
-import NavigationLink from "@/components/Navigation"
+import NavigationLink from "@/components/header/Navigation"
 import VideoSection from "@/components/video/VideoSection"
 
 interface ProductPageProps {
@@ -42,8 +20,10 @@ interface ProductPageProps {
 export default function CoursePage({ data }: ProductPageProps) {
   const courseData = data?.data;
 
+
   return (
     <div className="min-h-screen bg-gray-50 w-full ">
+      
       {/* Banner */}
       <CourseBanner data={courseData} />
       <div className="max-w-7xl mx-auto px-6 py-8">

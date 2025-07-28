@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Data } from '@/types/product';
 import React from 'react';
-import { IoCheckmarkSharp } from 'react-icons/io5';
+
 import { MdCheck } from 'react-icons/md';
 
 interface LearnCourseProps {

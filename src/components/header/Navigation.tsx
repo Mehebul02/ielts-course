@@ -25,7 +25,7 @@ const NavigationHeader = () => {
   }
 
   return (
-    <div className="sticky top-0 z-50 hidden lg:block">
+    <div className=" z-50 hidden lg:block">
       <div className="max-w-6xl mx-auto px-4">
         <div
           className="relative"
